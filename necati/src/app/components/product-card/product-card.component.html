@@ -1,0 +1,18 @@
+<div class="container">
+    <img class="img" [src]="product.img" alt="image">
+    <div class="name">{{ product.name }}</div>
+    <div class="flex">
+        <p class="bold">Ücret:</p>
+        <p>{{ product.price }}</p>
+    </div>
+    <div class="flex">
+        <p class="bold">Stocktaki adet:</p>
+        <p>{{ product.stock }}</p>
+    </div>
+    <div class="flex">
+        <p class="bold">Beden:</p>
+        <p>{{ product.size }}</p>
+    </div>
+    <p>{{ product.description }}</p>
+    <button (click)="addToCart()">Sepete ekle</button>
+</div>

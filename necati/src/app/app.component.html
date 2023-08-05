@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="cards" *ngFor="let item of this.productArray">
+    <product-card (sendProduct)="addToCart($event)" [product]="item"></product-card>
+  </div>
+</div>
+<div class="cart">
+  <p class="title">Sepetim</p>
+  <div class="cart-items">
+    <div class="product" *ngFor="let item of this.cartArray; index as i">
+      <div class="flex">
+        <p class="bold">Ürün:</p>
+        <p>{{ item.name }}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Fiyat:</p>
+        <p>{{ item.price }}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Beden:</p>
+        <p>{{ item.size }}</p>
+      </div>
+      <button class="button" (click)="remove(i)">Kaldır</button>
+    </div>
+  </div>
+  <div class="cashout-box">
+    <div class="flex ml-10">
+      <p class="bold">Toplam:</p>
+      <p>{{ totalPrice }}</p>
+    </div>
+    <div *ngIf="totalPrice > 0" class="pay flex">
+      <div class="flex">
+        <input type="checkbox" [checked]="discountCheck" (change)="calcDiscount()">
+        <p>%20 indirim</p>
+      </div>
+      <div class="pay">
+        <button (click)="pay()">Öde</button>
+      </div>
+    </div>
+  </div>
+</div>

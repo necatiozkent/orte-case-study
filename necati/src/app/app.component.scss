@@ -1,0 +1,80 @@
+:host {
+
+    .flex {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .bold {
+            font-weight: bold;
+        }
+    }
+
+    .ml-10 {
+        margin-left: 10px;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .cards {
+            margin: 10px;
+            background-color: ghostwhite;
+            border-radius: 5px;
+        }
+    }
+
+    .cart {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        top: 80vh;
+        margin-bottom: 100px;
+        background-color: rgba(179, 174, 174, 0.651);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cashout-box {
+            position: sticky;
+            display: flex;
+            justify-content: space-around;
+            bottom: 0;
+            background-color: rgba(192, 192, 192, 0.719);
+            height: 50px;
+            width: 400px;
+            left: 0;
+        }
+
+        .cart-items {
+
+            max-height: 100px;
+            overflow-y: scroll;
+
+            .product {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 10px;
+
+                .button {
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
