@@ -18,7 +18,7 @@ export class AppComponent {
 	discountCheck = false;
 
 	constructor(
-    private httpClient: HttpClient
+		private httpClient: HttpClient
 	) {
 		this.productList = {
 			products: [],
@@ -76,7 +76,11 @@ export class AppComponent {
 			products: this.cartArray
 		};
 
-		this.httpClient.post("somewhere", body);
+		try {
+			this.httpClient.post("somewhere", body);
+		} catch (error) {
+			console.error("Post has failed!!!", error);
+		}
 
 		this.cartArray = [];
 		this.totalPrice = 0;
